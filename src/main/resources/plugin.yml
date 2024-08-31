@@ -1,0 +1,4 @@
+name: JJsPlugin
+version: '${project.version}'
+main: org.pigslayer.jjsplugin.JJsPlugin
+api-version: '1.21'
