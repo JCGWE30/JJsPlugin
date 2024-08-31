@@ -41,7 +41,7 @@ jobs:
     - name: Upload plugin to FTP
       env:
         FTP_SERVER: ${{ secrets.FTP_SERVER }}
-        FTP_USERNAME: ${{ secrects.FTP_USERNAME }}
+        FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         FTP_PATH: ${{ secrets.FTP_PATH }}
       run: |
