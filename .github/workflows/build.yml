@@ -45,4 +45,4 @@ jobs:
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         FTP_PATH: ${{ secrets.FTP_PATH }}
       run: |
-        curl -T JJsPlugin-1.0.jar sftp://$FTP_SERVER/$FTP_PATH/ --user $FTP_USERNAME:$FTP_PASSWORD
+        curl -T JJsPlugin-1.0.jar sftp://$FTP_SERVER/$FTP_PATH/ --user $FTP_USERNAME:$FTP_PASSWORD --insecure
