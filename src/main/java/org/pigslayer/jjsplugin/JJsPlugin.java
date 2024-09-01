@@ -6,8 +6,7 @@ public final class JJsPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
-
+        ServerListener.startServer();
     }
 
     @Override
