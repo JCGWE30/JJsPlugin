@@ -5,7 +5,7 @@ import static spark.Spark.*;
 
 public class ServerListener {
     public static void startServer(){
-        port(26143);
+        port(8060);
 
         post("/message",(request,response) -> {
             String message = request.body();
