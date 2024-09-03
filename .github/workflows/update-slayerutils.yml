@@ -29,15 +29,3 @@ jobs:
         FTP_PATH: ${{ secrets.FTP_PATH }}
       run: |
         curl -T slayerutils.jar sftp://$FTP_SERVER/$FTP_PATH/ --user $FTP_USERNAME:$FTP_PASSWORD --insecure
-
-  upload:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-
-    - name: Download JAR artifact
-      uses: actions/download-artifact@v3
-      with:
-        name: plugin-jar
-    
-    
