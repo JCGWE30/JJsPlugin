@@ -1,0 +1,43 @@
+name: Update Slayer utils
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/checkout@v4
+
+    - name: Get Latest Slayer Utils Release
+      id: get_release
+      run: |
+        release_info=$(curl -s https://api.github.com/repos/JCGWE30/SlayerUtils/releases/latest)
+
+        download_url=$(echo $release_info | jq -r '.assets[] | select(.name | endswith(".jar")) | .browser_download_url')
+
+        echo "::set-output name=download_url::$download_url"
+
+    - name: Download Latest jar
+      run: curl -L -o slayerutils.jar ${{ steps.get_release.outputs.download_url }}
+
+    - name: Upload plugin to FTP
+      env:
+        FTP_SERVER: ${{ secrets.FTP_SERVER }}
+        FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        FTP_PATH: ${{ secrets.FTP_PATH }}
+      run: |
+        curl -T slayerutils.jar sftp://$FTP_SERVER/$FTP_PATH/ --user $FTP_USERNAME:$FTP_PASSWORD --insecure
+
+  upload:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Download JAR artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: plugin-jar
+    
+    
