@@ -92,6 +92,13 @@
           <id>sonatype</id>
           <url>https://oss.sonatype.org/content/groups/public/</url>
       </repository>
+      <repository>
+          <id>github</id>
+          <url>https://maven.pkg.github.com/jcgwe30/*</url>
+          <snapshots>
+              <enabled>true</enabled>
+          </snapshots>
+      </repository>
   </repositories>
 
   <dependencies>
