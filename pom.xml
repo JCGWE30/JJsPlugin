@@ -92,13 +92,6 @@
           <id>sonatype</id>
           <url>https://oss.sonatype.org/content/groups/public/</url>
       </repository>
-      <repository>
-          <id>github</id>
-          <url>https://maven.pkg.github.com/jcgwe30/*</url>
-          <snapshots>
-              <enabled>true</enabled>
-          </snapshots>
-      </repository>
   </repositories>
 
   <dependencies>
@@ -112,12 +105,6 @@
           <groupId>com.sparkjava</groupId>
           <artifactId>spark-core</artifactId>
           <version>2.9.4</version>
-      </dependency>
-      <dependency>
-          <groupId>org.slayerutils</groupId>
-          <artifactId>customutils</artifactId>
-          <version>1.1.2</version>
-          <scope>provided</scope>
       </dependency>
   </dependencies>
 </project>

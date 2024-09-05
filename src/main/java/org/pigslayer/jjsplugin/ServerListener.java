@@ -1,7 +1,6 @@
 package org.pigslayer.jjsplugin;
 
 import org.bukkit.Bukkit;
-import slayerutils.slayerutils.SlayerJson.SlayerJson;
 
 import java.util.Arrays;
 
